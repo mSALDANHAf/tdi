@@ -162,7 +162,7 @@ contract Lease {
     }
     
     //rule 5, Lessor can withdraw from the smart contract, at any time
-    function withdraw(uint quantity) payable public{
+    function withdraw(uint quantity) public{
         require(payable(msg.sender) == Lessor, "Only the Lessor can withdraw");
         require(pendingWithdrawal > 0 && quantity <= pendingWithdrawal);
         
